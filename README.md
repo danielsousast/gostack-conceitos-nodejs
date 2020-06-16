@@ -1,3 +1,12 @@
+<h3 align="center">
+  Desafio 02: Conceitos do Node.js
+</h3>
+
+<p align="center">
+  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rotas-da-aplicação">Rotas da aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+
 ## :rocket: Sobre o desafio
 
 Nesse desafio deveria ser criado uma aplicação para treinar conteitos iniciais do Node.js!
@@ -17,4 +26,6 @@ Essa é uma aplicação para armazenar repositórios, que irá permitir a criaç
 
 - **`POST /repositories/:id/like`**: A rota deve aumentar o número de likes do repositório específico escolhido através do `id` presente nos parâmetros da rota, a cada chamada dessa rota, o número de likes deve ser aumentado em 1;
 
+---
 
+By Daniel Sousa :wave: [Veja meu LikedIn!](https://www.linkedin.com/in/danielsousast/)
