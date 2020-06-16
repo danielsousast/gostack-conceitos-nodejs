@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
-// const { uuid } = require("uuidv4");
+const { uuid } = require("uuidv4");
 
 const app = express();
 
@@ -10,24 +9,88 @@ app.use(cors());
 
 const repositories = [];
 
+
+// List all repositories
 app.get("/repositories", (request, response) => {
-  // TODO
+  return response.json(repositories);
 });
 
+// Create a new repository
 app.post("/repositories", (request, response) => {
-  // TODO
+  const {title, url, techs, likes} = request.body;
+
+  const repository = {
+    id: uuid(),
+    title,
+    url,
+    techs,
+    likes: 0,
+  }
+
+  repositories.push(repository);
+
+  return response.json(repository);
 });
 
+// Update a repository
 app.put("/repositories/:id", (request, response) => {
-  // TODO
+  const { id } = request.params;
+  const { title, url, techs } = request.body;
+
+  const repositoryIndex = repositories.findIndex(repository => 
+    repository.id === id  
+  );
+
+  if (repositoryIndex === -1) {
+    return response.status(400).json({ error: 'Repository does not exists' });
+  }
+
+  const repository = {
+    id,
+    title,
+    url,
+    techs,
+    likes: repositories[repositoryIndex].likes,
+  };
+
+  repositories[repositoryIndex] = repository
+
+  return response.json(repository);
 });
 
+// Delete a repository
 app.delete("/repositories/:id", (request, response) => {
-  // TODO
+  const { id } = request.params;
+
+  const repositoryIndex = repositories.findIndex(repository => 
+    repository.id === id  
+  );
+
+  if (repositoryIndex === -1) {
+    return response.status(400).json({ error: 'Repository does not exists' });
+  }
+
+  repositories.splice(repositoryIndex, 1);
+
+  return response.status(204).json({message: 'Deleted'});
 });
 
+// Add a like on repository
 app.post("/repositories/:id/like", (request, response) => {
-  // TODO
+  const { id } = request.params;
+
+  const repositoryIndex = repositories.findIndex(repository => 
+    repository.id === id  
+  );
+
+  if (repositoryIndex === -1) {
+    return response.status(400).json({ error: 'Repository does not exists' });
+  }
+
+  repository = repositories[repositoryIndex];
+  repository.likes +=1;
+
+  return response.json(repository);
 });
 
 module.exports = app;
