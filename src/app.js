@@ -72,7 +72,7 @@ app.delete("/repositories/:id", (request, response) => {
 
   repositories.splice(repositoryIndex, 1);
 
-  return response.status(204).json({message: 'Deleted'});
+  return response.status(204).send();
 });
 
 // Add a like on repository
