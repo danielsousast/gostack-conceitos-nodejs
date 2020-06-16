@@ -3,15 +3,15 @@
 </h3>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-rotas-da-aplicação">Rotas da aplicação</a>&nbsp;&nbsp;&nbsp;
+  <a href="#sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rotas-da-aplicação">Rotas da aplicação</a>&nbsp;&nbsp;&nbsp;
 </p>
 
-## :rocket: Sobre o desafio
+## Sobre o desafio
 
 Nesse desafio deveria ser criado uma aplicação para treinar conteitos iniciais do Node.js! A aplicação em questão armazena repositórios, permitindo a criação, listagem, atualização e remoção dos repositórios, e além disso permite que repositórios possam receber "likes".
 
-## :rocket: Rotas da aplicação
+## Rotas da aplicação
 
 
 - **`POST /repositories`**: A rota recebe `title`, `url` e `techs` dentro do corpo da requisição, sendo a URL o link para o github desse repositório. Ao cadastrar um novo projeto, ele é armazenado dentro de um objeto no seguinte formato: `{ id: "uuid", title: 'Desafio Node.js', url: 'http://github.com/...', techs: ["Node.js", "..."], likes: 0 }`; 
